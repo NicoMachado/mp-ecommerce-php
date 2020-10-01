@@ -8,17 +8,68 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
 
-$payment_methods = new MercadoPago\PaymentMethod();
+//$payment_methods = new MercadoPago\PaymentMethod();
+//$payment_methods->excluded_payment_methods = array('id'=>'amex');
+//$payment_methods->excluded_payment_types = array('id' => 'atm');
+//$payment_methods->installments = 6;
 
-$preference->payment_methods = $payment_methods;
+// $preference->payment_methods = $payment_methods;
+
+$preference->payment_methods = array(
+    "excluded_payment_methods" => array(
+      array("id" => "amex")
+    ),
+    "excluded_payment_types" => array(
+      array("id" => "atm")
+    ),
+    "installments" => 6
+  );
+// ...
 
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
+$item->id = '1234';
 $item->title = $_POST['title'];
 $item->quantity = 1;
 $item->unit_price = $_POST['price'];
 
+$protocol = $_SERVER['HTTPS'] == '' ? 'http://' : 'https://';
+$folder = $protocol . $_SERVER['HTTP_HOST'];
+
+$item->picture_url = $folder.'/'.$_POST['img'];
+
 $preference->items = array($item);
+
+//
+$payer = new MercadoPago\Payer();
+  $payer->name = "Lalo";
+  $payer->surname = "Landa";
+  $payer->email = "test_user_63274575@testuser.com";
+  $payer->phone = array(
+    "area_code" => "11",
+    "number" => "22223333"
+  );
+  
+  $payer->address = array(
+    "street_name" => "False",
+    "street_number" => 123,
+    "zip_code" => "1111"
+  );
+  // ...
+
+$preference->payer = $payer;
+
+$preference->external_reference = "nmachado@culturait.com.ar";
+
+$preference->back_urls = array (
+    "success" => $folder .'/'."success.php",
+    "failure" => $folder .'/'."failure.php",
+    "pending" => $folder .'/'."pending.php"
+)
+
+
+
+//Graba y Postea
 $preference->save();
 
 
