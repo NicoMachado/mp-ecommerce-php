@@ -4,6 +4,8 @@ require __DIR__ .  '/vendor/autoload.php';
 
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
+//Integrator ID
+MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -65,9 +67,9 @@ $preference->back_urls = array (
     "success" => $folder .'/'."success.php",
     "failure" => $folder .'/'."failure.php",
     "pending" => $folder .'/'."pending.php"
-)
+);
 
-
+$preference->notification_url =$folder . '/' . "notifications.php"; 
 
 //Graba y Postea
 $preference->save();
