@@ -132,6 +132,11 @@
                                     </div>
                                     <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
                                     <form action="/procesar-pago" method="POST">
+                                            <input type="hidden" name="img" value="./assets/l6g6.jpg">
+                                            <input type="hidden" name="title" value=<?php echo $_POST['title'] ?>>
+                                            <input type="hidden" name="price" value=<?php echo $_POST['price'] ?>>
+                                            <input type="hidden" name="unit" value="1">
+
                                     <script
                                     src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
                                     data-preference-id="<?php echo $preference->id; ?>">
