@@ -16,6 +16,7 @@ erence=[EXTERNAL_REFERENCE]&payment_type=credit_card&preference_id=[PREFERENCE_I
 =[SITE_ID]&processing_mode=aggregator&merchant_account_id=null
 
 -->
+<h2>Success</h2>
 
 <br/>
 <?php echo "Collection ID " . $_GET['collection_id'] ?>
