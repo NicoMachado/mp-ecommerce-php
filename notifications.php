@@ -4,9 +4,8 @@ require __DIR__ .  '/vendor/autoload.php';
 
     MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
     $file = fopen('log.txt','w');
-    fwrite($file, "Entre....");
+    fwrite($file, "Entre...." . print_r($_POST));
     fclose($file);
-    print_r($_POST);
 
     switch($_POST["type"]) {
         case "payment":
@@ -14,7 +13,7 @@ require __DIR__ .  '/vendor/autoload.php';
             $json = file_get_contents('php://input');
             // Converts it into a PHP object
             $data = json_decode($json);
-            $file = fopen(__DIR__ .'/mp_payment_type.json','w');
+            $file = fopen('/mp_payment_type.json','w');
             fwrite($file, $json);
             fclose($file);
 
