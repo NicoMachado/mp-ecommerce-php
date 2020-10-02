@@ -4,7 +4,7 @@ require __DIR__ .  '/vendor/autoload.php';
 
     $file = fopen('log.txt','w');
     fwrite($file, "Entre...." );
-    fwrite($file, var_dump($_POST));
+    fwrite($file, var_dump($_REQUEST['type']));
     fclose($file);
 
     MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
