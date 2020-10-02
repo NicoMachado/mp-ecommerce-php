@@ -10,23 +10,13 @@ MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
 
-//$payment_methods = new MercadoPago\PaymentMethod();
-//$payment_methods->excluded_payment_methods = array('id'=>'amex');
-//$payment_methods->excluded_payment_types = array('id' => 'atm');
-//$payment_methods->installments = 6;
+$payment_methods = new MercadoPago\PaymentMethod();
+$payment_methods->excluded_payment_methods = array('id'=>'amex');
+$payment_methods->excluded_payment_types = array('id' => 'atm');
+$payment_methods->installments = 6;
 
-// $preference->payment_methods = $payment_methods;
+$preference->payment_methods = $payment_methods;
 
-$preference->payment_methods = array(
-    "excluded_payment_methods" => array(
-      array("id" => "amex")
-    ),
-    "excluded_payment_types" => array(
-      array("id" => "atm")
-    ),
-    "installments" => 6
-  );
-// ...
 
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
@@ -38,7 +28,7 @@ $item->unit_price = $_POST['price'];
 $protocol = $_SERVER['HTTPS'] == '' ? 'http://' : 'https://';
 $folder = $protocol . $_SERVER['HTTP_HOST'];
 
-echo $folder;
+//echo $folder;
 
 $item->picture_url = $folder.'/'.$_POST['img'];
 

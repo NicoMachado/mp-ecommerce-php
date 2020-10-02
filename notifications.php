@@ -7,6 +7,12 @@ require __DIR__ .  '/vendor/autoload.php';
     switch($_POST["type"]) {
         case "payment":
             $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
+            //Save Response to loca disc
+            $json = json_decode($payment);
+            var_dump($payment);
+            $file = fopen(__DIR__ .'/mp_payment_type.json','w');
+            fwrite($file, $json);
+            fclose($file);
             break;
         case "plan":
             $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
