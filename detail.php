@@ -38,6 +38,8 @@ $item->unit_price = $_POST['price'];
 $protocol = $_SERVER['HTTPS'] == '' ? 'http://' : 'https://';
 $folder = $protocol . $_SERVER['HTTP_HOST'];
 
+echo $folder;
+
 $item->picture_url = $folder.'/'.$_POST['img'];
 
 $preference->items = array($item);
@@ -70,6 +72,7 @@ $preference->back_urls = array (
 );
 
 $preference->notification_url =$folder . '/' . "notifications.php"; 
+$preference->auto_return = 'all';
 
 //Graba y Postea
 $preference->save();
@@ -210,8 +213,9 @@ $preference->save();
                                         </h3>
                                     </div>
 
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
-
+                                   <!--  <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button> -->
+                                   <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
+<!--
                                     <form action="/procesar-pago" method="POST">
  
                                     <script
@@ -219,7 +223,7 @@ $preference->save();
                                     data-preference-id="<?php echo $preference->id; ?>">
                                     </script>
                                     </form>
-
+-->
                                 </div>
                             </div>
                         </div>
