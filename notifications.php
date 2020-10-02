@@ -8,6 +8,15 @@ require __DIR__ .  '/vendor/autoload.php';
     fwrite($file, var_dump($_POST));
     fclose($file);
 
+
+    $json = file_get_contents('php://input');
+    // Converts it into a PHP object
+    $data = json_decode($json);
+    $file = fopen('mp_payment_type.json','w');
+    fwrite($file, $json);
+    fclose($file);
+
+
     switch($_POST["type"]) {
         case "payment":
 
