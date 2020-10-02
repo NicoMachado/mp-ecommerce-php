@@ -72,7 +72,7 @@ $preference->back_urls = array (
 );
 
 $preference->notification_url =$folder . '/' . "notifications.php"; 
-$preference->auto_return = 'all';
+$preference->auto_return = 'approved';
 
 //Graba y Postea
 $preference->save();
