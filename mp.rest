@@ -1,12 +1,12 @@
-## 
+### 
 GET https://api.mercadopago.com/v1/payment_methods
 Authorization: Bearer APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398
  
 
 
-## 
-POST https://nicomachado-mp-commerce-php.herokuapp.com/notifications.php?data.id=123&type=test
+### 
+POST https://nicomachado-mp-commerce-php.herokuapp.com/notifications.php?data.id=10462544493&type=payment
 Content-Type: application/json
-{
 
-}
+
+{"application_id":"4467321071434250","id":"123","live_mode":"false","type":"test","api_version":"v1","action":"test.created","date_created":"2017-03-10 02:02:02 +0000 UTC","user_id":"100730"}
