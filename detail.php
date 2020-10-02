@@ -34,6 +34,7 @@ $preference->payment_methods = array(
 $item = new MercadoPago\Item();
 $item->id = '1234';
 $item->title = $_POST['title'];
+$item->description = "Dispositivo móvil de Tienda e-commerce";
 $item->quantity = 1;
 $item->unit_price = $_POST['price'];
 
@@ -65,7 +66,7 @@ $payer = new MercadoPago\Payer();
 
 $preference->payer = $payer;
 
-$preference->external_reference = "nmachado@culturait.com.ar";
+$preference->external_reference = "fliamachado@yahoo.com";
 
 $preference->back_urls = array (
     "success" => $folder .'/'."success.php",
