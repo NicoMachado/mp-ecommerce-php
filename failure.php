@@ -5,6 +5,7 @@ collection_id=[PAYMENT_ID]&collection_status=approved&external_reference=[EXTERN
 &site_id=[SITE_ID]&processing_mode=aggregator&merchant_account_id=null
 -->
 
+<h2>Failure</h2>
 
 <br/>
 <?php echo "Collection ID " . $_GET['collection_id'] ?>

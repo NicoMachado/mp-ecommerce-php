@@ -11,9 +11,11 @@ erence=[EXTERNAL_REFERENCE]&payment_type=credit_card&preference_id=[PREFERENCE_I
 <br/>
 <?php echo "collection_status " . $_GET['collection_status'] ?>
 <br/>
-<?php echo "external_reference " . $_GET['external_reference'] ?>
+<?php echo "external_reference :" . $_GET['external_reference'] ?>
 <br/>
-<?php echo "payment_type " . $_GET['payment_type'] ?>
+<?php echo "payment_type :" . $_GET['payment_type'] ?>
+<br/>
+<?php echo "preference_id :" . $_GET['preference_id'] ?>
 <?php
 $url = $_SERVER['QUERY_STRING'];
 parse_str( parse_url( $url, PHP_URL_QUERY), $array );
