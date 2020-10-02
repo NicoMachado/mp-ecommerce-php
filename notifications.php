@@ -6,6 +6,7 @@ require __DIR__ .  '/vendor/autoload.php';
     $file = fopen('log.txt','w');
     fwrite($file, "Entre....");
     fclose($file);
+    print_r($_POST);
 
     switch($_POST["type"]) {
         case "payment":
