@@ -207,6 +207,7 @@ $preference->save();
 
                                    <!--  <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button> -->
                                    <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
+                                   <?php echo $preference->id; ?>
 <!--
                                     <form action="/procesar-pago" method="POST">
  
