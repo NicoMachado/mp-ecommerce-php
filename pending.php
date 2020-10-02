@@ -15,7 +15,7 @@ collection_id=[PAYMENT_ID]&collection_status=approved&external_reference=[EXTERN
 <br/>
 <?php echo "payment_type " . $_GET['payment_type'] ?>
 <?php
-//$url = $_SERVER['QUERY_STRING'];
-//parse_str( parse_url( $url, PHP_URL_QUERY), $array );
-//print_r( $array );
+$url = $_SERVER['QUERY_STRING'];
+parse_str( parse_url( $url, PHP_URL_QUERY), $array );
+print_r( $array );
 ?>

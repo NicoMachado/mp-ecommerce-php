@@ -15,7 +15,7 @@ erence=[EXTERNAL_REFERENCE]&payment_type=credit_card&preference_id=[PREFERENCE_I
 <br/>
 <?php echo "payment_type " . $_GET['payment_type'] ?>
 <?php
-//$url = $_SERVER['QUERY_STRING'];
-//parse_str( parse_url( $url, PHP_URL_QUERY), $array );
-//print_r( $array );
+$url = $_SERVER['QUERY_STRING'];
+parse_str( parse_url( $url, PHP_URL_QUERY), $array );
+print_r( $array );
 ?>

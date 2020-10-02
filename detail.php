@@ -73,7 +73,8 @@ $preference->back_urls = array (
     "pending" => $folder .'/'."pending.php"
 );
 
-$preference->notification_url =$folder . '/' . "notifications.php"; 
+//$preference->notification_url =$folder . '/' . "notifications.php"; 
+$preference->notification_url = "https://nicomachado-mp-commerce-php.herokuapp.com/notifications.php";
 $preference->auto_return = 'approved';
 
 //Graba y Postea
