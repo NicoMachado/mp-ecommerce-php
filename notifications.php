@@ -12,13 +12,13 @@ $file = fopen('log.txt','w');
 
 fwrite($file, "Entre....>" . $param["type"] .'<...');
 
-fwrite($file, "Entre....>" . print_r($param) .'<...');
+fwrite($file, "Entre....>" . var_dump($param) .'<...');
 fclose($file);
 
         switch($param["type"]) {
             case "payment":
     
-                $payment = MercadoPago\Payment.find_by_id($param["id"]);
+                $payment = MercadoPago\Payment::find_by_id($param["data.id"]);
                 //Save Response to loca disc
     //            var_dump($payment);
                 $file = fopen('mp_payment_type.json','w');
