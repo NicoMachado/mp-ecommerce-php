@@ -80,8 +80,6 @@ $preference->auto_return = 'approved';
 
 //Graba y Postea
 $preference->save();
-
-
 ?>
 
 <!DOCTYPE html>
