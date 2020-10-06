@@ -75,7 +75,7 @@ $preference->back_urls = array (
 );
 
 //$preference->notification_url =$folder . '/' . "notifications.php"; 
-$preference->notification_url = "https://nicomachado-mp-commerce-php.herokuapp.com/notifications.php";
+$preference->notification_url = "https://nicomachado-mp-commerce-php.herokuapp.com/notifications.php?source_news=webhooks";
 $preference->auto_return = 'approved';
 
 //Graba y Postea
