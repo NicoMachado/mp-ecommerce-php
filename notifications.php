@@ -4,11 +4,11 @@ require __DIR__ .  '/vendor/autoload.php';
 
 $json = file_get_contents('php://input');
 // Pasamos el JSON recibido a un array asociativo para manejarlo mejor en PHP.
-$param = json_decode($input, true);
+$param = json_decode($json, true);
 
 $file = fopen('log.txt','w');
 
-fwrite($file, "Entre...." . print_r($param['type'], true));
+fwrite($file, "Entre....>" . $param['type'] .'<...');
 
 fclose($file);
 
