@@ -18,7 +18,7 @@ fclose($file);
         switch($param["type"]) {
             case "payment":
     
-                $payment = MercadoPago\Payment::find_by_id($param["data.id"]);
+                $payment = MercadoPago\Payment::find_by_id($param["data"]["id"]);
                 //Save Response to loca disc
     //            var_dump($payment);
                 $file = fopen('mp_payment_type.json','w');
