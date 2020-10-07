@@ -11,20 +11,23 @@ $param = json_decode($json, true);
 $file = fopen('log.txt','w');
 
 fwrite($file, "Entre....>" . $param["type"] .'<...');
-
-fwrite($file, "Entre....>" . var_dump($param) .'<...');
+fwrite($file, "data...>" . $param["data"] .'<...');
+fwrite($file, "data.id..>" . $param["data.id"] .'<...');
 fclose($file);
+
+$file = fopen('mp_payment_type.json','w');
+fwrite($file, $json);
+fclose($file);
+
 
         switch($param["type"]) {
             case "payment":
-    
                 $payment = MercadoPago\Payment::find_by_id($param["data"]["id"]);
-                //Save Response to loca disc
-    //            var_dump($payment);
+/*
                 $file = fopen('mp_payment_type.json','w');
                 fwrite($file, json_encode($payment));
                 fclose($file);
-
+*/
                 break;
             case "plan":
                 //$plan = MercadoPago\Plan.find_by_id($_POST["id"]);
