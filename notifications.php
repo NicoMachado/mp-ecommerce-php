@@ -22,7 +22,7 @@ fclose($file);
                 //Save Response to loca disc
     //            var_dump($payment);
                 $file = fopen('mp_payment_type.json','w');
-                fwrite($file, $payment);
+                fwrite($file, json_encode($payment));
                 fclose($file);
 
                 break;
